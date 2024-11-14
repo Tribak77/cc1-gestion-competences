@@ -1,0 +1,19 @@
+@startuml
+
+left to right direction
+
+actor ResponsableDeFormation as RF
+actor Formateur as F
+rectangle pkg_competeces{
+
+usecase "Structurer les compétences par niveau et filière et module" as UC_1
+usecase "Visualiser les compétences dans un tableau de bord" as UC_3
+usecase "Accéder aux descriptions des compétences" as UC_4
+
+RF -- UC_1
+RF-- UC_3
+F-- UC_3
+}
+UC_3 ..> UC_4 : <<extend>>
+
+@enduml
